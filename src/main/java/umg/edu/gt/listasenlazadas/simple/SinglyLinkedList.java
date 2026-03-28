@@ -92,18 +92,6 @@ public class SinglyLinkedList<T> {
         return size == 0;
     }
 
-    /**
-     * RETO 1:
-     * Cuenta cuantas veces aparece un valor dentro de la lista.
-     *
-     * Reglas sugeridas:
-     * - No usar arreglos ni librerias externas.
-     * - Resolver solo con recorrido de nodos.
-     * - Complejidad esperada: O(n).
-     *
-     * @param value valor a buscar
-     * @return cantidad de ocurrencias encontradas
-     */
     public int countOccurrences(T value) {
         int count = 0;
         SimpleNode<T> current = head;
@@ -122,6 +110,23 @@ public class SinglyLinkedList<T> {
         head = null;
         tail = null;
         size = 0;
+    }
+
+    public void reverse() {
+        SimpleNode<T> previous = null;
+        SimpleNode<T> current = head;
+        SimpleNode<T> next = null;
+
+        tail = head;
+
+        while (current != null) {
+            next = current.getNext();
+            current.setNext(previous);
+            previous = current;
+            current = next;
+        }
+
+        head = previous;
     }
 
     @Override

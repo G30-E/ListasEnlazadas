@@ -19,6 +19,8 @@ public final class LinkedListChallenges {
         System.out.println();
         challenge2ClearList();
         System.out.println();
+        challenge3ReverseList();
+        System.out.println();
     }
 
     private static void challenge1CountOccurrences() {
@@ -56,5 +58,21 @@ public final class LinkedListChallenges {
         System.out.println("Lista vacia?: " + tareas.isEmpty());
         System.out.println("Tamano esperado: 0");
         System.out.println("Tamano obtenido: " + tareas.size());
+    }
+
+    private static void challenge3ReverseList() {
+        SinglyLinkedList<Integer> numeros = new SinglyLinkedList<>();
+        numeros.addLast(2);
+        numeros.addLast(4);
+        numeros.addLast(5);
+        numeros.addLast(6);
+
+        System.out.println("Reto 3 - Invertir la lista");
+        System.out.println("Lista original: " + numeros);
+
+        numeros.reverse();
+
+        System.out.println("Resultado esperado: [6, 5, 4, 2]");
+        System.out.println("Resultado obtenido: " + numeros);
     }
 }
