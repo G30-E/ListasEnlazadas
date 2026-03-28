@@ -118,6 +118,12 @@ public class SinglyLinkedList<T> {
         return count;
     }
 
+    public void clear() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("[");

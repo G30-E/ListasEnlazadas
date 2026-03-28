@@ -17,6 +17,8 @@ public final class LinkedListChallenges {
         System.out.println("=== RETOS DE IMPLEMENTACION ===");
         challenge1CountOccurrences();
         System.out.println();
+        challenge2ClearList();
+        System.out.println();
     }
 
     private static void challenge1CountOccurrences() {
@@ -36,7 +38,23 @@ public final class LinkedListChallenges {
         } catch (UnsupportedOperationException ex) {
             System.out.println(ex.getMessage());
         }
-        System.out.println();
     }
 
+    private static void challenge2ClearList() {
+        SinglyLinkedList<String> tareas = new SinglyLinkedList<>();
+        tareas.addLast("Estudiar");
+        tareas.addLast("Hacer tarea");
+        tareas.addLast("Practicar Java");
+
+        System.out.println("Reto 2 - Limpiar la lista");
+        System.out.println("Lista antes de clear: " + tareas);
+
+        tareas.clear();
+
+        System.out.println("Resultado esperado: []");
+        System.out.println("Resultado obtenido: " + tareas);
+        System.out.println("Lista vacia?: " + tareas.isEmpty());
+        System.out.println("Tamano esperado: 0");
+        System.out.println("Tamano obtenido: " + tareas.size());
+    }
 }
