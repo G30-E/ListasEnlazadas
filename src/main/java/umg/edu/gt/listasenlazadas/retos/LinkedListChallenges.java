@@ -21,6 +21,8 @@ public final class LinkedListChallenges {
         System.out.println();
         challenge3ReverseList();
         System.out.println();
+        challenge4RemoveDuplicates();
+        System.out.println();
     }
 
     private static void challenge1CountOccurrences() {
@@ -33,13 +35,9 @@ public final class LinkedListChallenges {
 
         System.out.println("Reto 1 - Analitica de eventos (lista simple)");
         System.out.println("Eventos: " + eventos);
-        try {
-            int totalLogins = eventos.countOccurrences("LOGIN");
-            System.out.println("Resultado esperado para LOGIN: 3");
-            System.out.println("Resultado obtenido: " + totalLogins);
-        } catch (UnsupportedOperationException ex) {
-            System.out.println(ex.getMessage());
-        }
+        int totalLogins = eventos.countOccurrences("LOGIN");
+        System.out.println("Resultado esperado para LOGIN: 3");
+        System.out.println("Resultado obtenido: " + totalLogins);
     }
 
     private static void challenge2ClearList() {
@@ -73,6 +71,24 @@ public final class LinkedListChallenges {
         numeros.reverse();
 
         System.out.println("Resultado esperado: [6, 5, 4, 2]");
+        System.out.println("Resultado obtenido: " + numeros);
+    }
+
+    private static void challenge4RemoveDuplicates() {
+        SinglyLinkedList<Integer> numeros = new SinglyLinkedList<>();
+        numeros.addLast(2);
+        numeros.addLast(4);
+        numeros.addLast(5);
+        numeros.addLast(4);
+        numeros.addLast(6);
+        numeros.addLast(2);
+
+        System.out.println("Reto 4 - Eliminar duplicados");
+        System.out.println("Lista original: " + numeros);
+
+        numeros.removeDuplicates();
+
+        System.out.println("Resultado esperado: [2, 4, 5, 6]");
         System.out.println("Resultado obtenido: " + numeros);
     }
 }

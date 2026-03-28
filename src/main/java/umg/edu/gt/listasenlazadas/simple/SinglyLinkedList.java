@@ -129,6 +129,28 @@ public class SinglyLinkedList<T> {
         head = previous;
     }
 
+    public void removeDuplicates() {
+        SimpleNode<T> current = head;
+
+        while (current != null) {
+            SimpleNode<T> runner = current;
+
+            while (runner.getNext() != null) {
+                if (isSameValue(runner.getNext().getValue(), current.getValue())) {
+                    if (runner.getNext() == tail) {
+                        tail = runner;
+                    }
+                    runner.setNext(runner.getNext().getNext());
+                    size--;
+                } else {
+                    runner = runner.getNext();
+                }
+            }
+
+            current = current.getNext();
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("[");
